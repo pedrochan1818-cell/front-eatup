@@ -1,0 +1,283 @@
+html, body {
+ height: 100%;
+  margin: 0;
+}
+
+#root {
+  width: 100%;  
+  height: 100%;
+}
+.amarillo{
+  background: rgb(222, 200, 129);
+}
+.rojo{
+  background: #9e9e65;
+  padding: 10%;
+  border-radius: 50%;
+  border: #6D112B;
+}
+.btn-vino {
+  background-color: #800020;  /* Código hexadecimal para rojo vino */
+  color: white;
+  border: none;
+}
+
+.btn-vino:hover {
+  background-color: #e44529b0;  /* Un tono más oscuro para el hover */
+}
+.texto-precio {
+  color: #8f2828; /* Gris estándar de Bootstrap (equivalente a text-secondary) */
+}
+  
+.main-sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #019875; /*veerde */
+  background: rgba(6, 133, 180, 0.859);   /*azul*/
+  padding: 15px;
+  color: white;
+}
+
+/* Estilos del logo */
+.brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+}
+
+.brand-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Estilos del usuario */
+.user-panel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(241, 218, 218, 0.1);
+  border-radius: 5px;
+}
+
+.user-panel h3 {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+}
+
+.user-panel .info {
+  margin-left: auto;
+}
+
+.user-panel a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Asegura que la lista de navegación sea vertical */
+.nav {
+  display: flex;
+  flex-direction: column; /* Asegura que los botones estén en columna */
+  gap: 10px; /* Espaciado entre los elementos */
+}
+
+/* Asegura que los enlaces ocupen todo el ancho */
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  width: 100%; /* Hace que los botones ocupen todo el ancho */
+  border-radius: 5px;
+  background: #C01840; /* Más rojo que el fondo */
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.nav-link:hover {
+  background: #6D112B;
+  color: white;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.btn-rojo {
+  display: flex;
+  flex-direction: column; /* Asegura que los botones estén en columna */
+  gap: 10px; /* Espaciado entre los elementos */
+}
+
+/* Asegura que los enlaces ocupen todo el ancho */
+.btn-rojo-link {
+  display: flex;
+  justify-content: center; /* Centra el contenido verticalmente */
+  padding: 10px;
+  border-radius: 5px;
+  background: #18c0a4; /* Más rojo que el fondo */
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn-rojo-link:hover {
+  background: #0b9fa6;
+  color: white;
+}
+
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* Estilo del título en el encabezado */
+.content-header {
+  background-color: #f9f8f4; /* Fondo claro para el encabezado */
+  padding: 20px;
+  border-bottom: 8px solid #ddd; /* Línea sutil de separación */
+}
+/* Contenido Principal */
+.container-fluid {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff; /* Fondo blanco para el contenido */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para el contenido */
+  border-radius: 5px;
+  
+}
+
+/* Estilo para el contenido dinámico (tarjeta) */
+.card {
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-top: 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Footer */
+.main-footer {
+  background-color: #f4f6f9;
+  padding: 10px;
+  border-top: 2px solid #ddd; /* Línea sutil de separación en el footer */
+  text-align: center;
+  color: #777;
+}
+
+.main-footer a {
+  color: #079d8e; /* Color del enlace en el footer */
+}
+
+.main-footer a:hover {
+  text-decoration: underline; /* Subrayado en hover */
+}
+
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 767px) {
+  .content-header {
+    padding: 10px;
+  }
+
+  .container-fluid {
+    padding: 15px;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+}
+
+
+.quantity-control {
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+}
+
+.quantity-btn {
+  width: 100px;
+  height: 35px;
+  border: none;
+  background: #255788;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0baba3;
+}
+
+.quantity-btn:hover {
+  background: #0baba3;
+  color: #1cb798;
+}
+
+.quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+.quantity-input {
+  width: 40px;
+  height: 30px;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+/* Eliminar flechas en navegadores modernos */
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-input {
+  -moz-appearance: textfield;
+}
+
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #d91e1e;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.icon-btn svg {
+  font-size: 1.25rem; /* Igual tamaño para todos los iconos */
+}
+
+

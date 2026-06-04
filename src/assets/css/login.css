@@ -1,0 +1,170 @@
+/* Fondo general con imagen */
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url("../img/login.comida.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* Opcional: efecto de fondo fijo */
+}
+
+
+/* Overlay con tono verde */
+.login-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 128, 96, 0.45); /* verde translúcido */
+  backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
+
+/* Formulario transparente con blur */
+.login-form {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* Inputs */
+.login-form input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Botón principal */
+.login-submit {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: #00b894;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-submit:hover {
+  background: #019875;
+}
+
+/* Botón limpiar */
+.btn-clear {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.btn-clear:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Logo */
+.login-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.login-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.social-btn img.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.google-btn {
+  background: #ffffff;
+  color: #444;
+}
+
+.google-btn:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
+}
+
+.microsoft-btn {
+  background: #f3f2f1;
+  color: #2b2b2b;
+}
+
+.microsoft-btn:hover {
+  background: #e1e1e1;
+  border-color: #bbb;
+}
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #777;
+  margin: 20px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.separator:not(:empty)::before {
+  margin-right: 10px;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 10px;
+}

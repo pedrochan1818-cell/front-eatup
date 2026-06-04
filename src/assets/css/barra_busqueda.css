@@ -1,0 +1,52 @@
+/* Contenedor de la barra de búsqueda */
+.barra_busqueda {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Input de búsqueda */
+  .barra_busqueda .form-control {
+    background-color: #f0f2f5;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    padding: 12px 20px 12px 45px;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    width: 100%;
+  }
+  
+  /* Hover */
+  .barra_busqueda .form-control:hover {
+    background-color: #fff;
+    border-color: #bbb;
+  }
+  
+  /* Focus */
+  .barra_busqueda .form-control:focus {
+    border-color: #ffb84d;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 184, 77, 0.3);
+    outline: none;
+  }
+  
+  /* Ícono de lupa dentro del input */
+  .barra_busqueda::before {
+    content: "🔍";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+    pointer-events: none;
+  }
+  
+  /* Centrar fila */
+  .row.mb-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

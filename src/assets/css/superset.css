@@ -1,0 +1,21 @@
+/* Contenedor del dashboard embebido */
+.superset-wrapper {
+  /* TAMAÑO EXACTO EN PIXELES */
+  width: 1200px !important;    /* 👈 ancho */
+  height: 800px !important;    /* 👈 alto */
+
+  margin: 0 auto;              /* centrar */
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  padding: 0;
+}
+
+/* El iframe que mete Superset dentro del contenedor */
+.superset-wrapper iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  border-radius: 12px;
+}

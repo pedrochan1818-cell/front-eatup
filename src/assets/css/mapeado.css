@@ -1,0 +1,42 @@
+/* Contenedor principal */
+.mapeado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+/* Tooltip centrado */
+.tooltip-mesa {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  @keyframes resaltarMesa {
+    0% { box-shadow: 0 0 10px 2px #007bffcc; }
+    50% { box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.5); }
+    100% { box-shadow: 0 0 0px 0 rgba(0, 123, 255, 0); }
+  }
+  
+  .mesa-nueva {
+    animation: resaltarMesa 40s ease-out forwards;
+    border-radius: 8px;
+    padding: 2px;
+  }
+  
+  

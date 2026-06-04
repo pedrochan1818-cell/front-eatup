@@ -1,0 +1,78 @@
+.empresa-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #000000;
+    transition: transform 0.3s ease;
+  }
+  
+  .empresa-logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .empresa-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  /* Modal general */
+.modal-dialog {
+    max-width: 800px;      /* Más ancho que el modal por defecto */
+    width: 90%;
+  }
+  
+  .modal-content {
+    border-radius: 12px;
+    padding: 0;
+  }
+  
+  .modal-body {
+    max-height: 70vh;      /* Limita la altura del modal */
+    overflow-y: auto;      /* Scroll si hay muchos campos */
+    padding: 20px 30px;
+  }
+  
+  /* Logo dentro del modal */
+  .empresa-logo {
+    width: 120px;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+  
+  /* Campos del formulario */
+  .modal-body .form-label {
+    font-weight: 600;
+  }
+  
+  .modal-body input,
+  .modal-body textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+  }
+  
+  /* Botones */
+  .modal-footer .btn {
+    min-width: 120px;
+  }
+  
+  /* Estilo para el overlay de fondo */
+  .modal-backdrop-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1040;
+  }
+  
+  /* Scroll para el modal interno */
+  .modal-scrollable {
+    overflow-y: auto;
+  }
+  

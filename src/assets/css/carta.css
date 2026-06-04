@@ -1,0 +1,145 @@
+.container-carta {
+    min-height: 100vh;
+    background: url("../img/mentita.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 60px;
+  }
+  
+  .input-group {
+    max-width: 100%;
+    margin: 0 auto 40px auto;
+  }
+  
+  .input-group .form-control {
+    border-radius: 50px;
+    border: none;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .input-group .form-control:focus {
+    box-shadow: 0 4px 20px rgba(255, 193, 7, 0.6);
+    outline: none;
+  }
+  .card {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Color de fondo alternativo (puedes usarlo para distinguir secciones) */
+  .amarillo {
+    background: linear-gradient(145deg, #fff7e6, #0e736c);
+  }
+  
+  /* Imagen del producto */
+  .card-img-top {
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    color: #ff5722;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  
+  .texto-precio {
+    color: #2e7d32;
+    font-size: 1.2rem;
+  }
+  
+  .quantity-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quantity-btn {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .quantity-btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.1);
+  }
+  
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: transparent;
+  }
+  
+  .btn-danger {
+    background-color: #02554c;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #19e3e6;
+    box-shadow: 0 4px 12px rgba(24, 219, 206, 0.5);
+    transform: scale(1.05);
+  }
+  
+  .card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 20px;
+    }
+  
+    .input-group {
+      width: 100%;
+    }
+  
+    .card {
+      margin-bottom: 20px;
+    }
+  }
+  

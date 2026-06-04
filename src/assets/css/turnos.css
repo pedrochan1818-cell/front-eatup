@@ -1,0 +1,46 @@
+.modal-eatup {
+    width: 100%;
+    max-height: 90vh;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;  
+    overflow-y: auto;
+    backdrop-filter: blur(2px);
+  }
+  
+  .modal-contenido {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-contenido label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .modal-contenido input,
+  .modal-contenido select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+  }
+  
+  .modal-acciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  .turno-activo-box {
+    background-color: #f8f9fa;
+    border-left: 6px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  

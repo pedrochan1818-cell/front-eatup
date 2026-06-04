@@ -1,0 +1,152 @@
+/* Estilos para órdenes compactas */
+.compact-order-card {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .compact-order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+  }
+  
+  .compact-order-card .card-header {
+    background-color: rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .productos-list {
+    max-height: 120px;
+    overflow-y: auto;
+  }
+  
+  .productos-list::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .productos-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .productos-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+  }
+  
+  .productos-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+  
+  /* Mejoras responsivas */
+  @media (max-width: 576px) {
+    .row-cols-1 {
+      --bs-gutter-x: 1rem;
+    }
+  }
+  
+  /* Colores de estado más suaves */
+  .badge {
+    font-weight: 500;
+  }
+  /* Estilos para los filtros */
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    padding: 6px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    background: white;
+    color: #6c757d;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .filter-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+  }
+  
+  .filter-btn.active {
+    background: #007bff;
+    border-color: #007bff;
+    color: white;
+  }
+  
+  /* Estilos para las órdenes compactas */
+  .compact-order-card {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 8px;
+  }
+  
+  .compact-order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+  }
+  
+  .compact-order-card .card-header {
+    background-color: rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .productos-list {
+    max-height: 120px;
+    overflow-y: auto;
+    margin-bottom: 8px;
+  }
+  
+  .productos-list::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .productos-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .productos-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+  }
+  
+  .productos-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+  
+  /* Mejoras responsivas */
+  @media (max-width: 576px) {
+    .filter-buttons {
+      justify-content: center;
+    }
+    
+    .filter-btn {
+      flex: 1;
+      min-width: 80px;
+      text-align: center;
+    }
+  }
+  .compact-order-card {
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.5s ease;
+  }
+    .button-filtrado {
+    background-color: #71cbb0;
+    color: #3c3b3b;
+    padding: 10px 30px;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .button-filtrado:hover {
+    background-color: #2F4F4F;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }

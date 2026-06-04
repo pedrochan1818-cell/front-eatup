@@ -1,0 +1,131 @@
+.btn-red {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.btn-red-largo {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    padding: 12px;
+    width: 30%; 
+    border-radius: 5px;
+    background: #C01840;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-red-largo:hover {
+    background: #6D112B;
+    color: white;
+}
+/* Efectos para las tarjetas */
+.card {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    border: none;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .object-fit-cover {
+    object-fit: cover;
+  }
+  
+  /* Animación para la descripción */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Estilos para los badges de categoría */
+  .bg-entradas {
+    background-color: #17a2b8 !important;
+  }
+  
+  .bg-comida {
+    background-color: #007bff !important;
+  }
+  
+  .bg-postres {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+  }
+  
+  .bg-bebidas {
+    background-color: #28a745 !important;
+  }
+  
+  /* Estilos para el modal */
+  .modal-content {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+  }
+  
+  .modal-header {
+    border-radius: 10px 10px 0 0 !important;
+  }
+  
+  /* Estilos para los botones de categoría */
+  .btn-category {
+    transition: all 0.2s ease;
+  }
+  
+  .btn-category:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Estilos para el input de búsqueda */
+  .input-group-text {
+    transition: all 0.3s ease;
+  }
+  
+  .input-group:focus-within .input-group-text {
+    background-color: #e9ecef;
+  }
+  .button-agregar {
+    background-color: #71cbb0;
+    color: #3c3b3b;
+    border: none;
+    padding: 15px 100px;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .button-agregar:hover {
+    background-color: #2F4F4F;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+  
+  .btn-verfoto {
+  background-color: #00A88F;
+  color: white;
+  border: none;
+}
+
+.btn-verfoto:hover {
+  background-color: #008f78;
+}
+
+.btn-asignar {
+  background-color: #00A88F;
+  color: white;
+  border: none;
+}
+
+.btn-asignar:hover {
+  background-color: #008f78;
+}

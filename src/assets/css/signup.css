@@ -1,0 +1,152 @@
+/* signup.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+   /* background: radial-gradient(rgb(224, 21, 78), rgb(14, 4, 7));*/
+  }
+  
+  .signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+
+     background: url("../img/login.comida.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Opcional: efecto de fondo fijo */
+  }
+  
+/* Overlay con tono verde */
+  .signup-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 128, 96, 0.45); /* verde translúcido */
+    backdrop-filter: blur(2px);
+    z-index: 0;
+  }
+
+  .signup-form {
+    background: rgba(255, 255, 255, 0.1); /* 70% de transparencia (alpha = 0.3) */
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(50px); /* Efecto de desenfoque */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .signup-text {
+    font-size: 1.5rem;
+    color: rgb(3, 136, 97);
+    margin-bottom: 10px;
+  }
+  
+  .signup-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: rgb(3, 136, 97);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .signup-input::placeholder {
+    color: rgba(2, 75, 92, 0.7);
+  }
+  
+  .signup-input:focus {
+    background: rgb(255, 255, 255);
+    color: black;
+    outline: none;
+  }
+  
+  .signup-submit {
+    width: 100%;
+    padding: 10px;
+    background: rgba(75, 138, 186, 0.7);
+    color: black;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px; /* Margen inferior para separar los botones */
+  }
+  
+  .signup-submit:hover {
+    background: #f8d7da;
+    color: black;
+  }
+  
+  .btn-clear {
+    width: 100%;
+    padding: 10px;
+    background: rgba(75, 138, 186, 0.7);
+    color: black;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px; /* Margen inferior para separar los botones */
+  }
+  
+  .btn-clear:hover {
+    background: #f8d7da;
+    color: black;
+  }
+  
+  .signup-link {
+    display: block;
+    text-align: center;
+    color: rgb(12, 78, 125);
+    margin-top: 10px; /* Margen superior para separar del botón */
+    font-size: 14px;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  
+  .signup-link:hover {
+    opacity: 1;
+  }
+  
+  @media (max-width: 600px) {
+    .signup-form {
+      width: 95%;
+    }
+  }
+  
+  /* signup.css */
+.form-label {
+    text-align: left; /* Alinea el texto a la izquierda */
+    display: block; /* Asegura que ocupe toda la línea */
+    margin-bottom: 5px; /* Espacio entre el label y el input */
+    color: rgba(3, 3, 4, 0.7); /* Color del texto */
+    font-size: 14px; /* Tamaño de la fuente */
+  }
+
+  /* signup.css */
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(81, 53, 219, 0.7); /* Color del ícono */
+  }
+  
+  .password-toggle:hover {
+    color: rgb(37, 5, 249); /* Cambia el color al pasar el cursor */
+  }

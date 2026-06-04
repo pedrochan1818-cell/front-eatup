@@ -1,0 +1,176 @@
+/* ===============================
+   ESTILOS GENERALES DE LA PÁGINA
+================================= */
+.main-content {
+    background-color: #faf9f4;
+    padding: 20px;
+}
+
+/* ===============================
+   NAVBAR
+================================= */
+.navbar {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+/* ===============================
+   TARJETAS DE PRODUCTOS
+================================= */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+    border-radius: 10px;
+}
+
+/* Nombre del producto */
+.card-title {
+    font-size: 1.3rem;
+    color: #00b3b3;
+}
+
+/* Precio */
+.texto-precio {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* ===============================
+   INPUT DE CANTIDAD
+================================= */
+.quantity-control {
+    background-color: #fff;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+}
+
+.quantity-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: #078a85;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.quantity-btn:hover {
+    background-color: #0e9179;
+}
+
+.quantity-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.quantity-input {
+    width: 55px;
+    text-align: center;
+    border: none;
+    font-size: 1.1rem;
+    background: transparent;
+    outline: none;
+}
+
+/* ===============================
+   BOTÓN AGREGAR
+================================= */
+.btn-danger {
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.btn-danger:hover {
+    background-color: #b02a37;
+}
+
+/* ===============================
+   MODAL PERSONALIZADO
+================================= */
+.modal-overlay {
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content h3 {
+    font-size: 1.7rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Texto rojo de advertencia */
+.modal-warning {
+    font-size: 1.2rem;
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* Botones modal */
+.modal-content button {
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Cerrar modal */
+.modal-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #444;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-close-btn:hover {
+    color: #d9534f;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
+
+    .modal-content {
+        width: 95% !important;
+    }
+}

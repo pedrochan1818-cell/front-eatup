@@ -1,0 +1,115 @@
+.gestion-planes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+  }
+  
+  .form-plan {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-plan input,
+  .form-plan textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+  
+  .form-plan h2 {
+    margin-bottom: 10px;
+  }
+  
+  .form-plan h3 {
+    margin-top: 20px;
+  }
+  
+  .beneficio-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .btn-agregar-beneficio,
+  .btn-eliminar-beneficio,
+  .btn-guardar {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .btn-agregar-beneficio:hover,
+  .btn-guardar:hover {
+    background-color: #3d8b40;
+  }
+  
+  .btn-eliminar-beneficio {
+    background-color: #e74c3c;
+    padding: 5px 10px;
+  }
+  
+  .lista-planes {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .lista-planes table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .lista-planes th,
+  .lista-planes td {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .lista-planes button {
+    margin-right: 8px;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .lista-planes .btn-eliminar {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .lista-planes button:hover {
+    opacity: 0.9;
+  }
+  
+  .titulo-planes {
+    text-align: center;
+    font-weight: 700;
+    color: #333;
+    margin-top: 20px;
+  }
+
+  
+  
+  .acciones-superiores {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  

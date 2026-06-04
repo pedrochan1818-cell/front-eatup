@@ -1,0 +1,211 @@
+.panel-reservas-title {
+    font-size: 2.5rem;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 40px;
+    backdrop-filter: blur(4px);
+    animation: fadeInDown 0.8s ease forwards;
+  }
+  
+  .panel-reservas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .reserva-panel-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .reserva-panel-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+  }
+  
+  .reserva-panel-card.confirmada {
+    border-top: 6px solid #20aa81;
+  }
+  .reserva-panel-card.cancelada {
+    border-top: 6px solid #f44336;
+    opacity: 0.9;
+  }
+  .reserva-panel-card.proceso {
+    border-top: 6px solid #27af2a;
+  }
+  .reserva-panel-card.terminada {
+    border-top: 6px solid #c4be1c;
+  }
+  
+  .reserva-panel-titulo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff7043;
+  }
+  
+  .reserva-panel-info {
+    color: #333;
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .reserva-panel-select {
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    transition: 0.3s;
+  }
+  
+  .reserva-panel-select:hover {
+    border-color: #ff9800;
+  }
+  
+  .reserva-panel-btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 8px;
+    justify-content: center;
+    gap: 6px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+  }
+  
+  .btn-ver-orden {
+    background-color: #4caf50;
+    height: 35px;
+  }
+  .btn-ver-orden:hover {
+    background-color: #43a047;
+    transform: scale(1.05);
+  }
+  
+  .btn-cerrar {
+    background-color: #f44336;
+  }
+  .btn-cerrar:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+  }
+  
+  .reserva-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(3px);
+    animation: fadeIn 0.4s ease forwards;
+  }
+  
+  .reserva-modal-container {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: scaleIn 0.4s ease forwards;
+  }
+  
+  .reserva-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 15px;
+  }
+  
+  .reserva-modal-header h3 {
+    color: #ff7043;
+    font-weight: bold;
+  }
+  
+  .reserva-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .reserva-modal-close:hover {
+    color: #f44336;
+  }
+  
+  .reserva-modal-body {
+    color: #333;
+  }
+  
+  .reserva-modal-body strong {
+    color: #ff9800;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .panel-reservas-container {
+      padding: 20px;
+    }
+  
+    .panel-reservas-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .reserva-modal-container {
+      width: 95%;
+      padding: 15px;
+    }
+  }
+  

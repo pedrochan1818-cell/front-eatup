@@ -1,0 +1,98 @@
+/* Contenedor general tipo grid como tus tarjetas */
+.contenedor-carritos {
+  display: grid;
+  padding-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+.titulo-pagina {
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* CARD del carrito */
+.carrito-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover */
+.carrito-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+}
+
+/* Header con número y estado */
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Estado estilo pastilla */
+.estado {
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+.estado-1 { background-color: #f0ad4e; }   /* Pendiente */
+.estado-2 { background-color: #0275d8; }   /* En preparación */
+.estado-3 { background-color: #5cb85c; }   /* Listo */
+.estado-4 { background-color: #292b2c; }   /* Entregado */
+
+/* Pago pastilla */
+.pago {
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.pago-pagado { background-color: #5cb85c; color: white; }
+.pago-pendiente { background-color: #d9534f; color: white; }
+
+/* Botón */
+.btn-ver-productos {
+  margin-top: 15px;
+  width: 100%;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.btn-ver-productos:hover {
+  background-color: #0056b3;
+}
+.btn-ordenar {
+  display: block;
+  margin: 40px auto 20px auto;
+  background-color: #28a745;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  transition: 0.2s ease;
+  width: 230px;
+  text-align: center;
+}
+
+.btn-ordenar:hover {
+  background-color: #1f7e36;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+}

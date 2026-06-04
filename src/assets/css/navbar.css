@@ -1,0 +1,104 @@
+.custom-navbar {
+  /* background-color: rgba(50, 79, 109, 1);*/
+  padding: 8px; /* Espaciado interno */
+ background: #00b894;   /* Blanco translúcido */
+  backdrop-filter: blur(6px);              /* efecto vidrio */
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Tamaño del texto del logo */
+  font-weight: bold; /* Negrita */
+}
+
+.navbar-brand .text-light {
+  color: #fff !important; /* Color blanco para "Eat" */
+}
+
+.navbar-brand .brand-dead {
+  color: rgba(77, 76, 76, 0.747);; /* Color rojo para "Up" */
+}
+
+.nav-link {
+  color: #fff !important; /* Color blanco para los enlaces */
+  font-size: 1.1rem; /* Tamaño del texto */
+  margin: 0 10px; /* Espaciado entre enlaces */
+  text-decoration: none; /* Eliminar subrayado por defecto */
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin bordes */
+  padding: 0; /* Sin padding adicional */
+}
+
+.nav-link:hover {
+  color: #616868 !important; /* Color rojo al hacer hover */
+  text-decoration: underline; /* Subrayado al hacer hover */
+  background-color: transparent; /* Fondo transparente al hacer hover */
+}
+
+.nav-item {
+  list-style: none; /* Eliminar el estilo de lista */
+}
+
+.nav-item .nav-link {
+  display: inline-block; /* Mostrar como bloque en línea */
+  cursor: pointer; /* Cambiar el cursor a pointer */
+}
+
+.btn-link {
+  color: #fff !important; /* Color blanco */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.btn-link:hover {
+  color: #1dd9f1 !important; /* Color rojo al hacer hover */
+}
+
+.fa-shopping-cart {
+  font-size: 1.2rem; /* Tamaño del ícono */
+}
+
+.badge {
+  font-size: 0.8rem; /* Tamaño del badge */
+  padding: 0.25em 0.5em; /* Espaciado interno */
+}
+
+.navbar.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Asegúrate de que el navbar esté por encima de otros elementos */
+}
+
+.main-content {
+  margin-top: 62px; /* Ajusta este valor según la altura del navbar */
+}
+
+/* Asegura que el menú hamburguesa sea visible en pantallas pequeñas */
+@media (max-width: 992px) {
+  .navbar-toggler {
+    border-color: rgba(175, 86, 86, 0.5);
+  }
+
+  .navbar-toggler-icon {
+    background-color: rgb(10, 156, 156); /* Hace el icono más visible */
+    border-radius: 3px;
+    padding: 5px;
+  }
+
+  .navbar-collapse {
+    background-color: rgba(8, 107, 85, 0.859); /* Fondo oscuro cuando el menú está abierto */
+    padding: 10px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+  }
+}

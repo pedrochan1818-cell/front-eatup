@@ -1,0 +1,256 @@
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar */
+  .main-sidebar {
+    width: 200px; /* Reducido de 250px */
+    background-color: #2a9df4;
+    color: #fff;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px; /* Reducido padding */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  
+  .main-sidebar .menu-item {
+    padding: 12px 15px; /* Reducido padding */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reducido gap */
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    margin: 2px 8px; /* Añadido margen reducido */
+    border-radius: 4px;
+  }
+  
+  .main-sidebar .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Es en la master de aqui abajo se cambia el fondo negro naye  */
+  .container-fluid {
+    flex: 1;
+    padding: 15px; 
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    /* background-color: #000 !important;*/ 
+  }
+ /*.container.py-4{
+    background-color: #000 !important;
+  }*/ 
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 8px 15px; 
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1); 
+    margin-bottom: 15px; 
+  }
+  
+  .navbar h2 {
+    margin: 0;
+    color: #b71c1c;
+    font-size: 1.3rem; 
+  }
+  
+  .btn-vino {
+    background-color: #800020;
+    color: #fff;
+    border: none;
+    padding: 4px 12px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; 
+  }
+  
+  .btn-vino:hover {
+    background-color: #a5002f;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px; /* Reducido padding */
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    right: 15px;
+    top: 50px;
+    min-width: 150px;
+  }
+  
+  .dropdown-menu img {
+    border-radius: 50%;
+    margin-bottom: 8px; 
+    width: 40px;
+    height: 40px;
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 6px 0; 
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+    margin-bottom: 15px; 
+    border: 1px solid #eaeaea;
+  }
+  
+  .card-header {
+    padding: 12px 15px; 
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eaeaea;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    padding: 15px; 
+    
+  }
+  
+  .card-title {
+    margin-bottom: 10px; 
+    font-size: 1.1rem;
+  }
+  
+  .main-footer {
+    text-align: center;
+    padding: 10px 15px; 
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+    font-size: 13px; 
+  }
+  
+  .main-footer a {
+    color: #2a9df4;
+    text-decoration: none;
+  }
+  
+  .main-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: 6px; 
+    border-radius: 4px;
+  }
+  
+  .icon-btn:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Tablas */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px 12px; 
+    border-bottom: 1px solid #dee2e6;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+  
+  .form-group {
+    margin-bottom: 12px; 
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 6px 10px; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px; 
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .main-sidebar {
+      width: 60px; 
+    }
+    
+    .main-sidebar .menu-item span:not(.icon) {
+      display: none; 
+    }
+    
+    .navbar h2 {
+      font-size: 1.1rem;
+    }
+    
+    .container-fluid {
+      padding: 10px;
+      
+    }
+    
+    .card-body {
+      padding: 12px;
+    }
+    
+    .table th,
+    .table td {
+      padding: 6px 8px;
+      font-size: 13px;
+    }
+  }
+  .nav-link {
+    color: #fff !important; /* Color blanco para los enlaces */
+    font-size: 1.1rem; /* Tamaño del texto */
+    margin: 0 10px; /* Espaciado entre enlaces */
+    text-decoration: none; /* Eliminar subrayado por defecto */
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin bordes */
+    padding: 0; /* Sin padding adicional */
+  }
+  
+  .nav-link:hover {
+    color: #ff4444 !important; /* Color rojo al hacer hover */
+    text-decoration: underline; /* Subrayado al hacer hover */
+    background-color: transparent; /* Fondo transparente al hacer hover */
+  }
+  .btn-link {
+    color: #fff !important; /* Color blanco */
+    text-decoration: none; /* Sin subrayado */
+  }
+  
+  .btn-link:hover {
+    color: #1dd9f1 !important; /* Color rojo al hacer hover */
+  }  
