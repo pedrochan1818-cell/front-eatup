@@ -15,7 +15,6 @@ function Home() {
   const [quantities, setQuantities] = useState({});
   const navigate = useNavigate();
 
-  // Cargar productos desde la API
   useEffect(() => {
     const fetchProducts = async () => {
       try {

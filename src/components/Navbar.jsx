@@ -3,7 +3,7 @@ import { FaUser } from 'react-icons/fa';
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { CartContext } from "../context/CartContext"; 
-import { FaBoxOpen, FaUsers, FaShoppingCart, FaSignOutAlt, FaHome } from "react-icons/fa"; 
+import { FaBoxOpen, FaUsers, FaShoppingCart, FaHome } from "react-icons/fa"; 
 import { NavDropdown } from "react-bootstrap"; 
 import "../assets/css/navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";

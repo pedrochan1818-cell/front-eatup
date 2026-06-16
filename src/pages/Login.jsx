@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaLock, FaBroom, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import "../assets/css/login.css"; // Importa el CSS de tu diseño
 import logo from '../assets/img/EATUP-MARK2.png';
-// src/pages/Login.jsx
 import api from '../api/client'; 
 
 function Login() {
@@ -64,10 +63,6 @@ function Login() {
     } finally {
       setLoading(false);
     }
-  };
-  const handleClear = () => {
-    setFormData({ email: "", password: "" });
-    setError("");
   };
 
   const togglePasswordVisibility = () => {

@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d9b924af.css",
+    "main.js": "/static/js/main.979d5032.js",
+    "static/media/restaurante2.png": "/static/media/restaurante2.a778964eeacd7ac5f81b.png",
+    "static/media/EATUP-MARK2.png": "/static/media/EATUP-MARK2.7df3e8fe0cb5e17fe233.png",
+    "static/media/restaurante.jpg": "/static/media/restaurante.48bdb5e1960d37155868.jpg",
+    "static/media/caballeroP.jpg": "/static/media/caballeroP.90a12c54bb9d855480bf.jpg",
+    "static/media/login.comida.jpg": "/static/media/login.comida.2814eb89f092176be259.jpg",
+    "static/media/chef.png": "/static/media/chef.343efc60b8b70dd39875.png",
+    "static/media/mentita.jpg": "/static/media/mentita.f904b7c7f2ecbcac1512.jpg",
+    "index.html": "/index.html",
+    "main.d9b924af.css.map": "/static/css/main.d9b924af.css.map",
+    "main.979d5032.js.map": "/static/js/main.979d5032.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9b924af.css",
+    "static/js/main.979d5032.js"
+  ]
+}

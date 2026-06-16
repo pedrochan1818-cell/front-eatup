@@ -5,7 +5,6 @@ import "../assets/css/menu.css";
 import {
   FaUser,
   FaGamepad,
-  FaCrosshairs,
   FaUsers,
   FaHome,
   FaBuilding,

@@ -4,8 +4,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import "../assets/css/reserva.css";
 import { QRCodeCanvas } from "qrcode.react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChair } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { toPng } from 'html-to-image';

@@ -11,7 +11,6 @@ import Perfil from "./pages/Perfil.jsx";
 import Products from "./pages/Products.jsx";
 import Users from "./pages/Users.jsx";
 import SignUp from "./pages/SignUp.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
 import History from "./pages/History.jsx";
 import Cart from "./pages/Cart.jsx";
 import Orden from "./pages/Orden.jsx";

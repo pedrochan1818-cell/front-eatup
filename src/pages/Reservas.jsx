@@ -13,12 +13,10 @@ function Reservas() {
   const [activeFilter, setActiveFilter] = useState("1"); // Por defecto: Confirmadas
   const [error, setError] = useState(null);
   const [selectedOrden, setSelectedOrden] = useState(null);
-  const [products, setProducts] = useState([]); 
   const [mesas, setMesas] = useState([]); 
 
   useEffect(() => {
     fetchReservas();
-    fetchProducts();
     fetchMesas();
 
     const handleEsc = (event) => {
@@ -46,15 +44,6 @@ function Reservas() {
     }
   };
 
-  const fetchProducts = async () => {
-    try {
-      const response = await api.get("api/productos");
-      setProducts(response.data);
-    } catch (err) {
-      console.error(err);
-      toast.error("No se pudieron cargar los productos.");
-    }
-  };
 
   const fetchMesas = async () => {
     try {

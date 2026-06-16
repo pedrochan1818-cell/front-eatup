@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import api from '../api/client'; 
 
 function CartCarrito({ idCarrito, onClose }) {
-  const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
+  const { removeFromCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
   const [user, setUser] = useState(null);
   const [dbCart, setDbCart] = useState([]);
   const [loading, setLoading] = useState(false);

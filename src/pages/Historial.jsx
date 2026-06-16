@@ -14,12 +14,6 @@ const Reservaciones = () => {
     qrUrl: "",
     qrData: null,
   });
-  const [carritos, setCarritos] = useState([]);
-const [modalCarrito, setModalCarrito] = useState({
-  abierto: false,
-  carrito: null,
-});
-
 
   const [modalPedido, setModalPedido] = useState({
     abierto: false,
@@ -113,21 +107,7 @@ const [modalCarrito, setModalCarrito] = useState({
     };
 
     fetchReservaciones();
-
-    const fetchCarritos = async () => {
-      try {
-        const user = JSON.parse(localStorage.getItem("user"));
-    
-        const response = await api.get(`api/carritos?user=${user.iduser}`);
-    
-        if (response.data.success) {
-          setCarritos(response.data.carritos);
-        }
-      } catch (error) {
-        console.error("Error al cargar carritos:", error);
-      }
-    };
-    
+  
   }, []);
 
   const cancelarReservacion = async (id) => {

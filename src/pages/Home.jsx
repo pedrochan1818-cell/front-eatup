@@ -7,7 +7,6 @@ import reserva from "../assets/img/calendario.png";
 import logo from "../assets/img/EATUP-MARK2.png";
 import taza from "../assets/img/chef.png";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Menu from './Menu';
 import { HiHome } from 'react-icons/hi';
-import { FaBoxOpen, FaUsers, FaShoppingCart, FaSignOutAlt, FaUser } from "react-icons/fa"; 
+import { FaSignOutAlt, FaUser } from "react-icons/fa"; 
 import "../assets/css/master.css";
 
 import api from '../api/client';

@@ -29,6 +29,7 @@ function Dashboard() {
            frameborder="0"
            width="100%"
            height="800"
+           title="mesas"
            allowtransparency
        ></iframe>
           ) : (
