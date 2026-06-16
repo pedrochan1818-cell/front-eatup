@@ -97,20 +97,22 @@
     background-color: transparent;
   }
   
-  .btn-danger {
-    background-color: #02554c;
+  .btn-home-h {
+    background-color: #2ac7b5;
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
     font-weight: bold;
     font-size: 1rem;
+    color:#0e5e58;
     transition: all 0.3s ease;
   }
   
-  .btn-danger:hover {
-    background-color: #19e3e6;
+  .btn-home-h:hover {
+    background-color: #2ac7b5;
     box-shadow: 0 4px 12px rgba(24, 219, 206, 0.5);
     transform: scale(1.05);
+    color: #0e5e58;
   }
   
   .card {

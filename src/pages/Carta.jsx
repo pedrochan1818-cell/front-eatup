@@ -1,4 +1,5 @@
-import { useState, useEffect, navigate } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,6 +13,7 @@ function Home() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState({});
   const [quantities, setQuantities] = useState({});
+  const navigate = useNavigate();
 
   // Cargar productos desde la API
   useEffect(() => {

@@ -44,6 +44,27 @@ function Login() {
     }
   };
 
+  const handleDemoLogin = async () => {
+    setLoading(true);
+  
+    try {
+      const demoData = {
+        email: "prueba@gmail.com",
+        password: "123456"
+      };
+  
+      const response = await api.post("api/login", demoData);
+  
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+      localStorage.setItem("token", response.data.token);
+  
+      navigate(response.data.redirect);
+    } catch (error) {
+      setError("No se pudo acceder al modo demo.");
+    } finally {
+      setLoading(false);
+    }
+  };
   const handleClear = () => {
     setFormData({ email: "", password: "" });
     setError("");
@@ -136,7 +157,7 @@ function Login() {
           <span>O</span>
         </div>
 
-        {/* Botones sociales */}
+        {/* Botones sociales 
         <div className="social-login">
           <a href="http://localhost:8000/login/google" className="social-btn google-btn">
             <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" className="social-icon" />
@@ -151,7 +172,14 @@ function Login() {
             />
             <span>Continuar con Microsoft</span>
           </a>
-        </div>
+        </div>*/}
+              <button
+              className="login-submit demo-btn"
+              onClick={handleDemoLogin}
+              disabled={loading}
+            >
+             Entrar como Demo
+            </button>
       </div>
 
       <div className="underlay-photo"></div>

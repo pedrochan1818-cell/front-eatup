@@ -8,6 +8,9 @@ import logo from "../assets/img/EATUP-MARK2.png";
 import taza from "../assets/img/chef.png";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+
 
 function Home() {
   const [user, setUser] = useState(null);
@@ -101,7 +104,11 @@ function Home() {
         <div className="welcome-content text-light">
           <p>¡Qué alegría verte por aquí! En EatUp hemos puesto todo nuestro corazón y experiencia...</p>
           <div className="welcome-cta">
-            <button className="btn btn-danger">Ver Menú Completo</button>
+          <Link to="/carta">
+          <button className="btn btn-home-h ">
+            Ver Menú Completo
+          </button>
+        </Link>
           </div>
         </div>
       </div>
@@ -116,7 +123,11 @@ function Home() {
         <div className="welcome-content text-light">
           <p>En EatUp, cada comida es una experiencia...</p>
           <div className="welcome-cta">
-            <button className="btn btn-danger">Reservar</button>
+          <Link to="/reserva">
+          <button className="btn btn-home-h">
+            Reservar
+          </button>
+        </Link>
           </div>
         </div>
       </div>
