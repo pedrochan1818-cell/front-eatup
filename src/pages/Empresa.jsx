@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Master from "../components/Master";
 import api, { STORAGE_URL } from "../api/client";
 import { toast } from "react-toastify";
@@ -23,15 +23,29 @@ function Empresa() {
   useEffect(() => {
     fetchEmpresa();
   }, []);
-
+  const handleCloseModal = useCallback(() => {
+    setShowModal(false);
+    setPreviewLogo(null);
+    setFormData({
+      nombre: empresa?.nombre || "",
+      descripcion: empresa?.descripcion || "",
+      direccion: empresa?.direccion || "",
+      telefono: empresa?.telefono || "",
+      email: empresa?.email || "",
+      logo: null,
+    });
+  }, [empresa]);
+  
   useEffect(() => {
-    // Cerrar modal con tecla ESC
     const handleKeyDown = (e) => {
       if (e.key === "Escape") handleCloseModal();
     };
+  
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  
+    return () =>
+      window.removeEventListener("keydown", handleKeyDown);
+  }, [handleCloseModal]);
 
   const fetchEmpresa = async () => {
     try {
@@ -93,18 +107,7 @@ function Empresa() {
 
   const handleOpenModal = () => setShowModal(true);
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setPreviewLogo(null);
-    setFormData({
-      nombre: empresa?.nombre || "",
-      descripcion: empresa?.descripcion || "",
-      direccion: empresa?.direccion || "",
-      telefono: empresa?.telefono || "",
-      email: empresa?.email || "",
-      logo: null,
-    });
-  };
+
 
   if (loading) {
     return (

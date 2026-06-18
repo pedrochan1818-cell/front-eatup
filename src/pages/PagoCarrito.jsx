@@ -216,7 +216,7 @@ function PagoCarrito() {
       toast.error("Primero debes crear un carrito.");
       navigate("/home");
     }
-  }, [idCarrito]);
+  }, [idCarrito, navigate]);
 
   const seleccionarMetodo = (metodo) => {
     setMetodoPago(metodo);

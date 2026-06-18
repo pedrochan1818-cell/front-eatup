@@ -9,7 +9,6 @@ function Home() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [user, setUser] = useState(null);
   const [quantities, setQuantities] = useState({});
 
   const navigate = useNavigate();
@@ -38,31 +37,6 @@ function Home() {
       )
     );
   }, [searchTerm, products]);
-
-  // Obtener usuario actualizado
-  const fetchUserData = async (iduser) => {
-    try {
-      const response = await api.get(`api/usuarios/${iduser}`);
-      const updatedUser = response.data;
-
-      setUser(updatedUser);
-      localStorage.setItem("user", JSON.stringify(updatedUser));
-    } catch (error) {
-      console.error("Error al obtener los datos del usuario", error);
-    }
-  };
-
-  // Cargar usuario desde localStorage
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-
-    if (storedUser) {
-      const parsedUser = JSON.parse(storedUser);
-
-      setUser(parsedUser);
-      fetchUserData(parsedUser.iduser);
-    }
-  }, []);
 
   // Cambiar cantidad
   const handleQuantityChange = (productId, value) => {

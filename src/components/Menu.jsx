@@ -42,11 +42,10 @@ const Menu = () => {
   return (
     <aside className="sidebar-container">
       {/* Brand Logo */}
-      <a className="brand-link">
-        <img src={logo} alt="Logo EatUp" className="brand-image img-circle" />
-        <span className="brand-text">EatUp</span>
-      </a>
-
+      <a href="/" className="brand-link">
+      <img src={logo} alt="Logo EatUp" className="brand-image img-circle" />
+      <span className="brand-text">EatUp</span>
+    </a>
       {/* Usuario conectado */}
       <div className="user-panel">
         <div className="user-info">

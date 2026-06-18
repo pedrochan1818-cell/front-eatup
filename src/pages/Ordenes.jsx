@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Master from "../components/Master";
 import api from "../api/client";
 import { toast } from "react-toastify";
@@ -6,6 +6,13 @@ import { Modal, Button } from "react-bootstrap";
 import "../assets/css/botones.css";
 import "../assets/css/reservas.css";
 import "../assets/css/ordenes.css";
+
+const filters = [
+  { key: "todos", label: "Todos", status: [1, 2, 3] },
+  { key: "pendiente", label: "Pendiente", status: 1 },
+  { key: "en-proceso", label: "En Proceso", status: 2 },
+  { key: "completado", label: "Completado", status: 3 }
+];
 
 function Ordenes() {
   const [pedidos, setPedidos] = useState([]);
@@ -32,13 +39,6 @@ function Ordenes() {
     return () => window.removeEventListener("keydown", handleEsc);
   }, [selectedReserva]);
 
-  // Filtros
-  const filters = [
-    { key: "todos", label: "Todos", status: [1, 2, 3] },
-    { key: "pendiente", label: "Pendiente", status: 1 },
-    { key: "en-proceso", label: "En Proceso", status: 2 },
-    { key: "completado", label: "Completado", status: 3 }
-  ];
 
   useEffect(() => {
     fetchPedidos();
@@ -106,9 +106,9 @@ function Ordenes() {
     return mesa ? mesa.nombre : "Mesa #" + id_mesa;
   };
 
-  const getProductData = (idproducto) => {
+  const getProductData = useCallback((idproducto) => {
     return products.find(p => p.idproducto === idproducto) || {};
-  };
+  }, [products]);
 
   const handleEstadoChange = async (id_orden, nuevoEstado) => {
     try {
@@ -146,7 +146,7 @@ function Ordenes() {
 
   useEffect(() => {
     let result = pedidos;
-
+  
     if (searchTerm) {
       result = result.filter(p =>
         p.id_pedido.toString().includes(searchTerm) ||
@@ -155,8 +155,9 @@ function Ordenes() {
         ))
       );
     }
-
+  
     const activeFilterObj = filters.find(f => f.key === activeFilter);
+  
     if (activeFilterObj && activeFilterObj.status) {
       if (Array.isArray(activeFilterObj.status)) {
         result = result.filter(p => activeFilterObj.status.includes(p.status));
@@ -164,9 +165,9 @@ function Ordenes() {
         result = result.filter(p => p.status === activeFilterObj.status);
       }
     }
-
+  
     setFilteredPedidos(result);
-  }, [searchTerm, activeFilter, pedidos, products]);
+  }, [searchTerm, activeFilter, pedidos, getProductData]);
 
   const getEstadoText = (status) => {
     switch(status) {
@@ -189,7 +190,7 @@ function Ordenes() {
   // 👉 NUEVA FUNCIÓN PARA PAGAR
   const handlePagarPedido = async () => {
     try {
-      const res = await api.put(
+      await api.put(
         `api/orden/${selectedPago.id_pedido}/pago`,
         {
           monto_pagado: pagoRecibido,

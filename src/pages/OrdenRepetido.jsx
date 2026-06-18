@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../assets/css/estilos.css";
-import { useLocation, useNavigate } from "react-router-dom";
 import CartNueva from "./CartNueva"; 
 import api, { STORAGE_URL } from "../api/client";
 
@@ -14,8 +13,6 @@ function OrdenRepetido() {
   const [loading, setLoading] = useState({});
   const [quantities, setQuantities] = useState({});
   const [showCartModal, setShowCartModal] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
   const [ordenId, setOrdenId] = useState(null);
   
 

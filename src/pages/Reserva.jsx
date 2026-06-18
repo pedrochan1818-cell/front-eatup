@@ -1,6 +1,3 @@
-// Reserva.jsx (actualizado)
-// Reemplaza tu archivo actual con este contenido.
-
 import React, { useState, useEffect, useCallback } from 'react';
 import "../assets/css/reserva.css";
 import { QRCodeCanvas } from "qrcode.react";

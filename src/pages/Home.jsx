@@ -6,13 +6,12 @@ import promo3 from "../assets/img/caballeroP.jpg";
 import reserva from "../assets/img/calendario.png";
 import logo from "../assets/img/EATUP-MARK2.png";
 import taza from "../assets/img/chef.png";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 
 function Home() {
-  const [user, setUser] = useState(null);
 
   // Datos del carrusel con imágenes locales
   const carouselItems = [
@@ -33,7 +32,6 @@ function Home() {
       const newUser = { iduser, email, nombre };
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(newUser));
-      setUser(newUser);
 
       // Limpiar URL
       window.history.replaceState({}, document.title, "/home");
@@ -42,14 +40,7 @@ function Home() {
 
   return (
     <div className="main-content">
-      {/* Mensaje de bienvenida 
-      {user && (
-        <div className="container mt-3">
-          <p className="text-light">Bienvenido, {user.nombre ?? user.name ?? user.email}</p>
-        </div>
-      )}*/}
-
-      {/* Carrusel */}
+        {/* Carrusel */}
       <div id="homeCarousel" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
           {carouselItems.map((item, index) => (

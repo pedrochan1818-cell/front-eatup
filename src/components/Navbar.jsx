@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { FaUser } from 'react-icons/fa';
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { CartContext } from "../context/CartContext"; 
 import { FaBoxOpen, FaUsers, FaShoppingCart, FaHome } from "react-icons/fa"; 
 import { NavDropdown } from "react-bootstrap"; 
 import "../assets/css/navbar.css";
@@ -14,7 +13,6 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export function Navbar() {
   const { isAuthenticated } = useContext(AuthContext);
-  const { cart } = useContext(CartContext); 
   const [user, setUser] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 

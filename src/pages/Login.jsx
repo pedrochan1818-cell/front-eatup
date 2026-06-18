@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
-import "../assets/css/login.css"; // Importa el CSS de tu diseño
+import "../assets/css/login.css";
 import logo from '../assets/img/EATUP-MARK2.png';
 import api from '../api/client'; 
 
