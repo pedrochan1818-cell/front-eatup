@@ -13,7 +13,7 @@ const Planes = () => {
   const [loading, setLoading] = useState(true);
   const id_empresa = localStorage.getItem("id_empresa");
   const navigate = useNavigate();
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     obtenerPlanes();
     obtenerPlanActivo();

@@ -13,7 +13,6 @@ const Perfil = () => {
     foto: null,
     idrol: "",
   });
-  const [roles, setRoles] = useState([]);
   const [showPassword, setShowPassword] = useState(false);
   const [copyMessage, setCopyMessage] = useState("");
   const [showPhotoModal, setShowPhotoModal] = useState(false);
@@ -21,8 +20,6 @@ const Perfil = () => {
 
   useEffect(() => {
     fetchUserData();
-    fetchRoles();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [iduser]);
 
   const fetchUserData = async () => {
@@ -34,14 +31,6 @@ const Perfil = () => {
     }
   };
 
-  const fetchRoles = async () => {
-    try {
-      const response = await api.get("api/roles");
-      setRoles(response.data);
-    } catch (error) {
-      console.error("Error al obtener roles", error);
-    }
-  };
 
   const handleShowPhoto = () => {
     if (usuario.foto) {

@@ -14,7 +14,7 @@ const Turno = ({ id_empresa }) => {
     hora_fin: "",
     status: 1,
   });
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchTurnos();
   }, []);
