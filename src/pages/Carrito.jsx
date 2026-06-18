@@ -5,7 +5,7 @@ import "../assets/css/estilos.css";
 import "../assets/css/carrito.css";
 import { useNavigate } from "react-router-dom";
 import CartCarrito from "./CartCarrito"; 
-import api from '../api/client';
+import api, { STORAGE_URL } from "../api/client";
 
 function Carrito() {
   const [, setProducts] = useState([]);
@@ -214,7 +214,7 @@ function Carrito() {
               <div className="card h-100 border-0 shadow-sm amarillo">
                 {product.foto && (
                   <img
-                    src={`http://127.0.0.1:8000/api/productos/foto/${product.foto}`}
+                    src={`${STORAGE_URL}/api/productos/foto/${product.foto}`}
                     className="card-img-top"
                     alt={product.nombre}
                     style={{

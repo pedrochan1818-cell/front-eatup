@@ -6,7 +6,7 @@ import "../assets/css/estilos.css";
 import "../assets/css/orden.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import Cart from "./Cart"; 
-import api from '../api/client';
+import api, { STORAGE_URL } from "../api/client";
 
 function Orden() {
   const [ ,setProducts] = useState([]);
@@ -312,7 +312,7 @@ function Orden() {
               <div className="card h-100 border-0 shadow-sm amarillo">
                 {product.foto && (
                   <img
-                    src={`http://127.0.0.1:8000/api/productos/foto/${product.foto}`}
+                    src={`${STORAGE_URL}/api/productos/foto/${product.foto}`}
                     className="card-img-top"
                     alt={product.nombre}
                     style={{

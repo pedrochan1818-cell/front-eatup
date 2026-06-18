@@ -3,7 +3,7 @@ import { CartContext } from "../context/CartContext";
 import Master from "../components/Master";
 import "../assets/css/botones.css";
 import { toast } from "react-toastify";
-import api from "../api/client";
+import api, { STORAGE_URL } from "../api/client";
 import "../assets/css/barra_busqueda.css";
 import "../assets/css/products.css";
 import Modal from "react-bootstrap/Modal";
@@ -230,7 +230,7 @@ function Products() {
                       style={{ height: "200px" }}
                     >
                       <img
-                        src={`http://127.0.0.1:8000/api/productos/foto/${product.foto}`}
+                        src={`${STORAGE_URL}/api/productos/foto/${product.foto}`}
                         className="card-img-top h-100 w-100 object-fit-cover"
                         alt={product.nombre}
                       />

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Master from "../components/Master";
-import api from "../api/client";
+import api, { STORAGE_URL } from "../api/client";
 import { toast } from "react-toastify";
 import Turno from "./Turno";
 import "../assets/css/empresa.css";
@@ -147,7 +147,7 @@ function Empresa() {
                     <img
                       src={
                         previewLogo ||
-                        `http://127.0.0.1:8000/api/empresa/logo/${empresa.logo}`
+                        `${STORAGE_URL}/api/empresa/logo/${empresa.logo}`
                       }
                       alt="Logo empresa"
                       className="empresa-logo mb-4"

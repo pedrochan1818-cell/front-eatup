@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../assets/css/historial.css";
 import { toast } from "react-toastify";
-import api from "../api/client";
+import api, { STORAGE_URL } from "../api/client";
 import { Modal, Button } from "react-bootstrap";
 
 const Reservaciones = () => {
@@ -90,7 +90,7 @@ const Reservaciones = () => {
                 status: reserva.status,
                 orden: reserva.orden,
                 status_pagado,
-                qr: `http://127.0.0.1:8000/api/reservas/mostrarQR/${reserva.qr_image}`,
+                qr: `${STORAGE_URL}/api/reservas/mostrarQR/${reserva.qr_image}`,
                 qr_image: reserva.qr_image,
                 id_reserva: reserva.id_reserva,
               };

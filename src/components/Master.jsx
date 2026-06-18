@@ -5,7 +5,7 @@ import { HiHome } from 'react-icons/hi';
 import { FaSignOutAlt, FaUser } from "react-icons/fa"; 
 import "../assets/css/master.css";
 
-import api from '../api/client';
+import api, { STORAGE_URL } from "../api/client";
 
 const Master = ({ titulo, contenido }) => {
   const [user, setUser] = useState(null);
@@ -120,8 +120,8 @@ const Master = ({ titulo, contenido }) => {
                     <p className="text-dark text-center mb-2">{user.email}</p>
 
                     {user.foto && (
-                      <img
-                        src={`http://127.0.0.1:8000/api/usuarios/foto/${user.foto}`}
+                        <img
+                        src={`${STORAGE_URL}/api/usuarios/foto/${user.foto}`}
                         alt="Foto de perfil"
                         className="img-fluid rounded-circle d-block mx-auto mb-2"
                         style={{ width: "80px", height: "80px" }}

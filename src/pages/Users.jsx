@@ -4,7 +4,7 @@ import "../assets/css/botones.css";
 import "../assets/css/barra_busqueda.css";
 import "../assets/css/users.css";
 import { toast } from "react-toastify";
-import api from "../api/client";
+import api, { STORAGE_URL } from "../api/client";
 import { Modal, Button } from "react-bootstrap";
 
 function Users() {
@@ -177,7 +177,7 @@ function Users() {
   };
 
   const handleShowPhoto = (user) => {
-    const photoPath = `http://127.0.0.1:8000/api/usuarios/foto/${user.foto}`;
+    const photoPath = `${STORAGE_URL}/api/usuarios/foto/${user.foto}`;
     setPhotoUrl(photoPath);
     setShowPhotoModal(true);
   };

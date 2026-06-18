@@ -13,42 +13,44 @@ const Planes = () => {
   const [loading, setLoading] = useState(true);
   const id_empresa = localStorage.getItem("id_empresa");
   const navigate = useNavigate();
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
+    const obtenerPlanes = async () => {
+      try {
+        const res = await api.get("api/planes/listado");
+        setPlanes(res.data);
+      } catch (error) {
+        toast.error("Error al cargar los planes");
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const obtenerPlanActivo = async () => {
+      if (!id_empresa) return;
+
+      try {
+        const res = await api.get("api/empresa");
+
+        if (res.data && res.data.id_plan) {
+          setPlanActivo(res.data.id_plan);
+        }
+      } catch (error) {
+        console.error("No se pudo obtener el plan actual:", error);
+      }
+    };
+
     obtenerPlanes();
     obtenerPlanActivo();
-  }, []);
-
-  // 🔹 Obtener los planes desde la API
-  const obtenerPlanes = async () => {
-    try {
-      const res = await api.get("api/planes/listado");
-      setPlanes(res.data);
-    } catch (error) {
-      toast.error("Error al cargar los planes");
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // 🔹 Obtener el plan activo actual de la empresa
-  const obtenerPlanActivo = async () => {
-    if (!id_empresa) return;
-    try {
-      const res = await api.get("api/empresa");
-      if (res.data && res.data.id_plan) {
-        setPlanActivo(res.data.id_plan);
-      }
-    } catch (error) {
-      console.error("No se pudo obtener el plan actual:", error);
-    }
-  };
+  }, [id_empresa]);
 
   // 🔹 Comprar o activar un plan
   const handleComprar = async (id_plan, precio) => {
     if (!id_empresa) {
-      toast.warning("Primero debes registrar tu empresa antes de elegir un plan.");
+      toast.warning(
+        "Primero debes registrar tu empresa antes de elegir un plan."
+      );
       return;
     }
 
@@ -106,8 +108,12 @@ const Planes = () => {
                         <Crown size={32} />
                       </div>
                       <h2 className="plan-nombre">{plan.nombre}</h2>
-                      <p className="plan-precio">${plan.precio} MXN / mes</p>
-                      <p className="plan-descripcion">{plan.descripcion}</p>
+                      <p className="plan-precio">
+                        ${plan.precio} MXN / mes
+                      </p>
+                      <p className="plan-descripcion">
+                        {plan.descripcion}
+                      </p>
                     </div>
 
                     <ul className="plan-lista">
@@ -126,7 +132,9 @@ const Planes = () => {
                       ) : (
                         <Button
                           variant="success"
-                          onClick={() => handleComprar(plan.id_plan, plan.precio)}
+                          onClick={() =>
+                            handleComprar(plan.id_plan, plan.precio)
+                          }
                         >
                           Pagar Suscripción
                         </Button>

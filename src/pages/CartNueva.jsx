@@ -1,9 +1,9 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import { CartContext } from "../context/CartContext";
 import { FaTrash, FaPlus, FaMinus, FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import api from '../api/client'; 
+import api, { STORAGE_URL } from "../api/client";
 
 function CartNueva({ idOrden, onClose }) {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
@@ -11,6 +11,31 @@ function CartNueva({ idOrden, onClose }) {
   const [dbCart, setDbCart] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const fetchCart = useCallback(async () => {
+    if (!user?.iduser) return;
+  
+    try {
+      setLoading(true);
+  
+      const response = await api.get(`api/detalle/${user.iduser}`);
+  
+      const transformedCart = response.data.map((item) => ({
+        id: item.idproducto,
+        idcarrito: item.id,
+        name: item.producto?.nombre || "Producto no disponible",
+        price: item.producto?.precio || 0,
+        quantity: item.cantidad,
+        foto: item.producto?.foto || null,
+      }));
+  
+      setDbCart(transformedCart);
+    } catch (error) {
+      console.error("Error al obtener carrito", error);
+      toast.error("Error al cargar el carrito");
+    } finally {
+      setLoading(false);
+    }
+  }, [user?.iduser]);
 
   // Cargar usuario del localStorage
   useEffect(() => {
@@ -21,32 +46,11 @@ function CartNueva({ idOrden, onClose }) {
   }, []);
 
   // Cargar carrito desde la base de datos cuando el usuario cambie
-  useEffect(() => {
-    if (user?.iduser) {
+    useEffect(() => {
       fetchCart();
-    }
-  }, [user?.iduser]);
+    }, [fetchCart]);
 
-  const fetchCart = async () => {
-    try {
-      setLoading(true);
-      const response = await api.get(`api/detalle/${user.iduser}`);
-      const transformedCart = response.data.map(item => ({
-        id: item.idproducto,
-        idcarrito: item.id,
-        name: item.producto?.nombre || 'Producto no disponible',
-        price: item.producto?.precio || 0,
-        quantity: item.cantidad,
-        foto: item.producto?.foto || null
-      }));
-      setDbCart(transformedCart);
-    } catch (error) {
-      console.error("Error al obtener carrito", error);
-      toast.error("Error al cargar el carrito");
-    } finally {
-      setLoading(false);
-    }
-  };
+
 
   // 🔥🔥🔥 NUEVO — AGREGAR REPETIDO
   const handleAddRepeated = async (productId) => {
@@ -204,7 +208,7 @@ function CartNueva({ idOrden, onClose }) {
               <div className="d-flex align-items-center">
                 {item.foto && (
                   <img
-                    src={`http://127.0.0.1:8000/api/productos/foto/${item.foto}`}
+                    src={`${STORAGE_URL}/api/productos/foto/${item.foto}`}
                     alt=""
                     style={{
                       width: '50px',

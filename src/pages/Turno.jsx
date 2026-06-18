@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import api from "../api/client";
 import { toast } from "react-toastify";
 import "../assets/css/turnos.css";
@@ -14,14 +14,11 @@ const Turno = ({ id_empresa }) => {
     hora_fin: "",
     status: 1,
   });
-// eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    fetchTurnos();
-  }, []);
-
-  const fetchTurnos = async () => {
+  const fetchTurnos = useCallback(async () => {
     try {
-      const res = await api.get("api/turno/listado", { params: { id_empresa } });
+      const res = await api.get("api/turno/listado", {
+        params: { id_empresa },
+      });
       setTurnos(res.data);
     } catch (error) {
       console.error("Error al cargar turnos:", error);
@@ -29,7 +26,11 @@ const Turno = ({ id_empresa }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id_empresa]);
+
+  useEffect(() => {
+    fetchTurnos();
+  }, [fetchTurnos]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

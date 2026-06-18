@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import "../assets/css/perfil.css";
-import api from '../api/client';
+import api, { STORAGE_URL } from "../api/client";
 
 const Perfil = () => {
   const { iduser } = useParams();
@@ -17,24 +17,25 @@ const Perfil = () => {
   const [copyMessage, setCopyMessage] = useState("");
   const [showPhotoModal, setShowPhotoModal] = useState(false);
   const [photoUrl, setPhotoUrl] = useState("");
-
-  useEffect(() => {
-    fetchUserData();
-  }, [iduser]);
-
-  const fetchUserData = async () => {
+  const cargarUsuario = useCallback(async () => {
     try {
       const response = await api.get(`api/usuarios/${iduser}`);
       setUsuario(response.data);
     } catch (error) {
       console.error("Error al obtener datos del usuario", error);
     }
-  };
-
-
+  }, [iduser]);
+  
+  useEffect(() => {
+    cargarUsuario();
+  }, [cargarUsuario]);
   const handleShowPhoto = () => {
     if (usuario.foto) {
-      setPhotoUrl(`http://127.0.0.1:8000/api/usuarios/foto/${encodeURIComponent(usuario.foto)}?t=${Date.now()}`);
+      setPhotoUrl(
+        `${STORAGE_URL}/api/usuarios/foto/${encodeURIComponent(
+          usuario.foto
+        )}?t=${Date.now()}`
+      );
       setShowPhotoModal(true);
     }
   };
@@ -75,7 +76,7 @@ const Perfil = () => {
       })
       .then(() => {
         alert("Información del usuario actualizada correctamente");
-        fetchUserData(); // Actualizar datos después de editar
+        cargarUsuario(); // Actualizar datos después de editar
       })
       .catch((error) => {
         console.error("Error al actualizar la información", error);

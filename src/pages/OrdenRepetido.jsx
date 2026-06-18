@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../assets/css/estilos.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import CartNueva from "./CartNueva"; 
-import api from '../api/client';
+import api, { STORAGE_URL } from "../api/client";
 
 function OrdenRepetido() {
   const [ ,setProducts] = useState([]);
@@ -168,7 +168,7 @@ function OrdenRepetido() {
 
                 {product.foto && (
                   <img
-                    src={`http://127.0.0.1:8000/api/productos/foto/${product.foto}`}
+                    src={`${STORAGE_URL}/api/productos/foto/${product.foto}`}
                     className="card-img-top"
                     alt={product.nombre}
                     style={{
