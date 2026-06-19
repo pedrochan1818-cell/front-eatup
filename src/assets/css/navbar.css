@@ -34,8 +34,8 @@
 }
 
 .nav-link:hover {
-  color: #616868 !important; /* Color rojo al hacer hover */
-  text-decoration: underline; /* Subrayado al hacer hover */
+  color: #00ffff !important; /* Color rojo al hacer hover */
+  text-decoration: none; /* Subrayado al hacer hover */
   background-color: transparent; /* Fondo transparente al hacer hover */
 }
 

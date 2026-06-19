@@ -1,9 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaUser } from 'react-icons/fa';
-import { useContext, useState, useEffect } from "react";
-import { AuthContext } from "../context/AuthContext";
-import { FaBoxOpen, FaUsers, FaShoppingCart, FaHome } from "react-icons/fa"; 
-import { NavDropdown } from "react-bootstrap"; 
+import {useState, useEffect, useRef } from "react";
+import { FaShoppingCart, FaHome } from "react-icons/fa"; 
 import "../assets/css/navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -12,9 +10,58 @@ import { STORAGE_URL } from "../api/client";
 import { FaWhatsapp } from 'react-icons/fa';
 
 export function Navbar() {
-  const { isAuthenticated } = useContext(AuthContext);
+
   const [user, setUser] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+  const mobilebuttonRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+  
+    document.addEventListener("mousedown", handleClickOutside);
+  
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+  const handleOutside = (event) => {
+    if (
+      mobileOpen &&
+      mobileMenuRef.current &&
+      !mobileMenuRef.current.contains(event.target)&&
+      mobilebuttonRef.current &&
+      ! mobilebuttonRef.current.contains(event.target)
+    ) {
+      setMobileOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleOutside);
+  };
+}, [mobileOpen]);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location]);
 
   // Función para actualizar datos del usuario desde backend
   const fetchUserData = async (iduser) => {
@@ -70,19 +117,20 @@ export function Navbar() {
 
         {/* Botón menú móvil */}
         <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        ref={mobilebuttonRef}
+        className="navbar-toggler"
+        onClick={() => setMobileOpen(!mobileOpen)}
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
 
         {/* Navbar links */}
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+        ref={mobileMenuRef}
+        className={`navbar-collapse ${
+          mobileOpen ? "show" : "collapse"
+        }`}
+      >
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link" to="/carta">Menú</Link>
@@ -95,7 +143,7 @@ export function Navbar() {
             </li>
             <li className="nav-item">
               <Link 
-                className="nav-link" 
+                className="nav-link btn btn-link text-danger" 
                 to="#" 
                 onClick={(e) => {
                   e.preventDefault();
@@ -103,7 +151,7 @@ export function Navbar() {
                 }}
                 title="Contactar por WhatsApp"
               >
-                <FaWhatsapp style={{ color: '#f6f9f7ff', fontSize: '1.2rem' }} />
+                <FaWhatsapp style={{fontSize: '1.3rem' }} />
               </Link>
             </li>
             <li className="nav-item">
@@ -119,39 +167,53 @@ export function Navbar() {
 
             {/* Perfil */}
             <li className="nav-item">
-              <button
-                className="nav-link btn btn-link text-danger dropdown-toggle"
-                onClick={() => setMenuOpen(!menuOpen)}
-                title="Perfil"
-                style={{ textDecoration: "none" }}
-              >
+                  <button
+                  ref={buttonRef}
+                  className="nav-link btn btn-link text-danger dropdown-toggle"
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  title="Perfil"
+                  style={{ textDecoration: "none" }}
+                >
                 <FaUser />
               </button>
               
               {menuOpen && (
-                <div className="dropdown-menu show p-3" style={{ minWidth: "200px", position: "absolute", right: 0, left: "auto" }}>
+              <div
+              ref={menuRef}
+              className="dropdown-menu show p-3"
+              style={{
+                minWidth: "200px",
+                position: "absolute",
+                right: 0,
+                left: "auto"
+              }}
+            >
                   <p className="text-dark text-center mb-2">{user?.email || "Cargando..."}</p>
-                  {user?.foto && (
-                    <img
-                      src={`${STORAGE_URL}/api/usuarios/foto/${user.foto}`}
-                      alt="Foto de perfil"
-                      className="img-fluid rounded-circle d-block mx-auto mb-2"
-                      style={{ width: "100px", height: "100px" }}
-                    />
-                  )}
+                  <div className="text-center mb-2">
+                  {user?.foto && user.foto !== "default.jpg" ? (
+                  <img
+                    src={`${STORAGE_URL}/api/usuarios/foto/${user.foto}`}
+                    alt="Foto de perfil"
+                    className="img-fluid rounded-circle"
+                    style={{ width: "100px", height: "100px", objectFit: "cover" }}
+                  />
+                ) : (
+                  <FaUser
+                    style={{
+                      fontSize: "90px",
+                      color: "#b0b0b0",
+                      background: "#f1f1f1",
+                      borderRadius: "50%",
+                      padding: "15px"
+                    }}
+                  />
+                )}
+                </div>
                   <a href={`/perfil/${user?.iduser || ""}`} className="dropdown-item">Administrar Contraseñas</a>
                   <button onClick={handleLogout} className="dropdown-item text-danger">Cerrar Sesión</button>
                 </div>
               )}
             </li>
-
-            {/* Menú desplegable Catálogos */}
-            {isAuthenticated && (
-              <NavDropdown title="Catálogos" id="catalog-dropdown" className="text-light">
-                <NavDropdown.Item as={Link} to="/products" className="text-dark"><FaBoxOpen className="me-2" /> Productos</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/users" className="text-dark"><FaUsers className="me-2" /> Usuarios</NavDropdown.Item>
-              </NavDropdown>
-            )}
           </ul>
         </div>
       </div>
